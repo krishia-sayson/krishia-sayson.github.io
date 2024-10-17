@@ -14,58 +14,78 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     background-image: url('./img/retro\ wallpaper.jpg');
-    overflow: hidden;
+    /* overflow: hidden; */
     font-family: Helvetica, sans-serif;
     color: rgb(211, 211, 211);
+
 }
 
-.site-container{
-    margin: 0;
-    height: 100px;
-    width: 100px;
+body>div{
+    padding-top: 45px;
+    scroll-behavior: smooth;
+}
+
+.site-container {
+    margin: 0 auto;
+    height: 300px;
+    width: 300px;
     text-align: center;
     display: block;
-    border-radius: 1em,red;
-    background-image: url('/img/logo.png');
-    background-size: cover;  
+    background-size: cover;
+    border-radius: 50%;
 }
-/* 
-.site-logo {
-    height: 100%;
+
+.site-container:hover>.site-logo {
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+
+.site-container img {
     width: 100%;
-    position: relative;
-    transition: transform 1500ms;
-    transform-style: preserve-3d;
-  }
-
-.front,
-.back {
-  height: 100%;
-  width: 100%;
-  border-radius: 2rem;
-  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
-  position: absolute;
-  backface-visibility: hidden;
 }
 
-.front {
-    background-image: url(/img/logo.png);
-  }
-  
-  .back {
-    background-color: #3a3a3a;
+.site-logo {
+    transition: transform 1500ms;
+    position: relative;
+    transform-style: preserve-3d;
+    min-width: 300px;
+    min-height: 100px;
+}
+.logo,
+.back {
+    border-radius: 50%;
+    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;    
+}
+
+.logo {
+    background-image: url('./img/logo.png');
+    background-color: #3a3a3aa8;
+    aspect-ratio: 1;
+    width: 100%;
+    background-size: cover;
+}
+
+.back {
+    background-color: #3a3a3aa8;
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
-  } */
+    gap: 3rem;
+    min-width: 300px;
+    min-height: 300px;
+    font-family: Helvetica, Arial;
+    color: #ffffff;
+}
 
 ul {
-    list-style-type:none;
+    list-style-type: none;
     padding: 10px;
     text-align: right;
     background-color: rgba(31, 30, 30, 0.534);
@@ -80,7 +100,7 @@ li {
     display: inline-flex;
     margin-right: 4%;
     font-size: large;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: rgb(255, 255, 255);
     text-decoration: none;
 
@@ -92,14 +112,31 @@ a {
     text-decoration: none;
 
 }
+
 @keyframes linearGradient {
-    0% {color: black;}
-    25% {color: rgb(119, 68, 68);}
-    50% {color: rgb(201, 62, 62);}
-    100% {color: red;}
+    0% {
+        color: black;
+    }
+
+    25% {
+        color: rgba(122, 9, 9, 0.418);
+    }
+
+    50% {
+        color: rgb(201, 62, 62);
+    }
+
+    100% {
+        color: red;
+    }
+}
+.nav-bar {
+    position: fixed;
+    width: 100vw;
+    top: 0;
 }
 .nav-bar a:hover {
-    color: rgb(255, 0, 0) ;
+    color: rgb(255, 0, 0);
     text-decoration: none;
     position: static;
     border-radius: 1%;
@@ -107,45 +144,39 @@ a {
     border-right: 10px solid transparent;
     transition: .5s;
 
-    
-
-
-}
-
-.site-logo {
-    text-align: center;
-    display: block;
-    margin: 0;
-
 }
 
 .bot-bar ul {
-    color: ;
+    /* color: ; */
     text-align: left;
     font-family: sans-serif;
     font-size: 2px;
     background-color: rgba(31, 30, 30, 0.534);
     position: fixed;
     bottom: 0;
-    width: 100%    
-    
+    width: 100%
 }
 
 .card-container {
     box-sizing: border-box;
+    height: 500px;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 5rem;
 }
-    
+
 
 .card {
-    background-color: rgb(247, 247, 141);
+    height: 400px;
+    background-color: rgba(247, 247, 141, 0.664);
     background-image: url('./img/profile.png');
     text-align: center;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: inset;
     flex-wrap: wrap;
-    margin: 100px;
-
-
+    color: blue;
+    background-image: url('./img/profile.png');
+    background-size: cover;
 
 }
