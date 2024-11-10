@@ -14,12 +14,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+    transition: 0.5 ease;
+}
 
 body {
     background-image: url('./img/retro\ wallpaper.jpg');
     /* overflow: hidden; */
     font-family: Helvetica, sans-serif;
     color: rgb(211, 211, 211);
+    height: 200%;
 
 }
 
@@ -208,8 +213,8 @@ a {
 
 .card-container {
     box-sizing: border-box;
-    height: 500px;
-    width: 400px;
+    height: 400px;
+    width: 300px;
     margin: 0 auto;
     margin-top: 5rem;
     transition: 1s;
@@ -217,27 +222,32 @@ a {
 }
 
 .card {
-    height: 400px;
-    background-color: rgba(34, 13, 13, 0.363);
+    height: 100%;
+    background-color: rgba(247, 235, 168, 0.363);
     text-align: center;
-    border-radius: 2em;
+    border-radius: 50%;
     overflow: hidden;
     flex-wrap: wrap;
-    color: blue;
-    background-image: url('./img/profile.png');
-    background-size: cover;
+    color: rgb(0, 0, 10);
+    background-image: url('./img/krishia_profile.png');
+    background-size: contain;
+    background-position: left; /* Centers the image within the card */
+    background-repeat: no-repeat; /* Prevents tiling if the image is smaller than the card */
     transition: transform 1s ease-in-out;
+    border: 5px dotted rgb(255, 254, 186);
+
+
 }
 
 /* Create a hidden info card that appears when .card-container is hovered */
 .info {
     position: absolute;
     top: 0;
-    left: 420px; /* Position it just to the right of the .card-container */
+    left: -620px;
     height: 400px;
-    width: 400px;
+    width: 600px;
+    margin: 0;
     background-color: rgba(34, 13, 13, 0.8);
-    text-align: center;
     border-radius: 2em;
     box-shadow: inset;
     flex-wrap: wrap;
@@ -246,17 +256,29 @@ a {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transform: translateX(-20px); /* Offset for a sliding effect */
+    transform: translateX(-30px); 
     transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.info h1{
+    font-style: oblique;
+    text-align: right;
 }
 
 /* Show .info when .card-container is hovered */
 .card-container:hover > .info {
     opacity: 1;
-    transform: translateX(4rem); /* Slide into view */
+    transform: translateX(20rem); /* Slide into view */
     visibility: visible;
+    transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
 .card-container:hover > .card {
-    transform: translateX(-5rem); /* Slide .card to the left */
+    transform: translateX(20rem); /* Slide .card to the left */
+}
+
+.bubble-container {
+    height: 400px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
