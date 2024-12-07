@@ -1,34 +1,24 @@
-/*.container {
-    background-color: lightsalmon;
-    display: block;
-    height: auto;
-    border-bottom: 1px red;
-
-}
-.container .nav-bar {
-    justify-content: space-between;
-}
-*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
+
+html {
     scroll-behavior: smooth;
     transition: 0.5 ease;
 }
 
 body {
     background-image: url('./img/retro\ wallpaper.jpg');
-    /* overflow: hidden; */
     font-family: Helvetica, sans-serif;
     color: rgb(211, 211, 211);
     height: 200%;
+    background-color: #f1f1f111;
 
 }
 
-body>div{
+body>div {
     padding-top: 45px;
     scroll-behavior: smooth;
 }
@@ -41,6 +31,7 @@ body>div{
     display: block;
     background-size: cover;
     border-radius: 50%;
+    transition: opacity 0.5 ease;
 }
 
 .site-container:hover>.site-logo {
@@ -59,15 +50,13 @@ body>div{
     min-width: 300px;
     min-height: 100px;
 }
-/* .site-container.clicked > .site-logo {
-    transform: rotateY(180deg);
-} */
+
 .logo,
 .back {
     border-radius: 50%;
     box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
     position: absolute;
-    backface-visibility: hidden;    
+    backface-visibility: hidden;
 }
 
 .logo {
@@ -79,7 +68,7 @@ body>div{
 }
 
 .back {
-    border-style:outset;
+    border-style: outset;
     border-color: rgb(207, 21, 21);
     background-color: #3a3a3aa8;
     transform: rotateY(180deg);
@@ -141,11 +130,13 @@ a {
         color: red;
     }
 }
+
 .nav-bar {
     position: fixed;
     width: 100vw;
     top: 0;
 }
+
 .nav-bar a:hover {
     color: rgb(255, 0, 0);
     text-decoration: none;
@@ -158,7 +149,6 @@ a {
 }
 
 .bot-bar ul {
-    /* color: ; */
     text-align: left;
     font-family: sans-serif;
     font-size: 2px;
@@ -168,48 +158,6 @@ a {
     width: 100%
 }
 
-/* .card-container {
-    box-sizing: border-box;
-    height: 500px;
-    width: 400px;
-    margin: 0 auto;
-    margin-top: 5rem;
-    transition: 1s ;
-}
-
-
-.card {
-    height: 400px;
-    background-color: rgba(34, 13, 13, 0.363);
-    text-align: center;
-    border-radius: 2em;
-    overflow: hidden;
-    box-shadow: inset;
-    flex-wrap: wrap;
-    color: blue;
-    background-image: url('./img/profile.png');
-    background-size: cover;
-
-}
-
-.card-container:hover>.card {
-    cursor: pointer;
-    transform: translateX(-20rem);
-    transition: 1s ease-in-out;
-}
-.info {
-    height: 400px;
-    background-color: rgba(34, 13, 13, 0.363);
-    text-align: center;
-    border-radius: 2em;
-    overflow: hidden;
-    box-shadow: inset;
-    flex-wrap: wrap;
-    color: blue;
-    background-size: cover;
-    visibility: hidden;
-
-} */
 
 .card-container {
     box-sizing: border-box;
@@ -231,15 +179,29 @@ a {
     color: rgb(0, 0, 10);
     background-image: url('./img/krishia_profile.png');
     background-size: contain;
-    background-position: left; /* Centers the image within the card */
-    background-repeat: no-repeat; /* Prevents tiling if the image is smaller than the card */
+    background-position: left;
+    background-repeat: no-repeat;
     transition: transform 1s ease-in-out;
-    border: 5px dotted rgb(255, 254, 186);
-
-
 }
 
-/* Create a hidden info card that appears when .card-container is hovered */
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 10px double rgb(255, 7, 7);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgb(83, 30, 30);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* .retro-border img{
+    height: 100%;
+    background: transparent;
+    z-index: inherit;
+} */
+
+
 .info {
     position: absolute;
     top: 0;
@@ -256,29 +218,249 @@ a {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transform: translateX(-30px); 
+    transform: translateX(-30px);
     transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.info h1{
-    font-style: oblique;
-    text-align: right;
+
 }
 
-/* Show .info when .card-container is hovered */
-.card-container:hover > .info {
+.info h1,
+.info p {
+    font-style: oblique;
+    text-align: right;
+    margin-left: 3rem;
+    margin: 3rem;
+}
+
+.card-container:hover>.info {
     opacity: 1;
-    transform: translateX(20rem); /* Slide into view */
+    transform: translateX(20rem);
     visibility: visible;
     transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
-.card-container:hover > .card {
-    transform: translateX(20rem); /* Slide .card to the left */
+.card-container:hover>.card {
+    transform: translateX(20rem);
 }
 
-.bubble-container {
-    height: 400px;
+.certs {
+    width: 90%;
+    max-width: 1536px;
+    margin-inline: auto;
+    
+    position: relative;
+    height: 100px;
+    margin-top: 5rem;
+    overflow: hidden;
+    mask-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 1) 80%,
+            rgba(0, 0, 0, 0));
+}
+
+@keyframes scrollLeft {
+    to {
+        left: -200px;
+    }
+}
+/* .certs {
+    width: 90%;
+    max-width: 1536px;
+    margin-inline: auto;
+    position: relative;
+    height: 100px;
+    margin-top: 5rem;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, 1) 80%,
+        rgba(0, 0, 0, 0)
+    );
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.certs.visible {
+    opacity: 1;
+    transform: translateY(0);
+} */
+
+.slide {
+    width: 200px;
+    height: 100px;
+    background-color: rgba(255, 0, 0, 0.199);
+    border-radius: 6px;
+    position: absolute;
+    left: max(calc(200px * 8), 100%);
+    animation-name: scrollLeft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+
+.item1 {
+    animation-delay: calc(30s / 8 * (8 - 1) * -1);
+}
+
+.item2 {
+    animation-delay: calc(30s / 8 * (8 - 2) * -1);
+}
+
+.item3 {
+    animation-delay: calc(30s / 8 * (8 - 3) * -1);
+}
+
+.item4 {
+    animation-delay: calc(30s / 8 * (8 - 4) * -1);
+}
+
+.item5 {
+    animation-delay: calc(30s / 8 * (8 - 5) * -1);
+}
+
+.item6 {
+    animation-delay: calc(30s / 8 * (8 - 6) * -1);
+}
+
+.item7 {
+    animation-delay: calc(30s / 8 * (8 - 7) * -1);
+}
+
+.item8 {
+    animation-delay: calc(30s / 8 * (8 - 8) * -1);
+}
+
+/* .bubble-container {
+    position: relative;
+    margin-top: 3rem;
+    background-color: transparent;
+    height: 100%;
     width: 100%;
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bubble {
+    position: absolute;
+    background: radial-gradient(circle,
+            rgba(173, 216, 230, 0.3) 30%,
+            rgba(135, 206, 235, 0.3) 50%,
+            rgba(70, 130, 180, 0.3) 70%,
+            rgba(0, 191, 255, 0.3) 100%);
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 15px rgba(173, 216, 230, 0.3), 0 0 25px rgba(135, 206, 235, 0.3);
+    border: 1px solid rgba(173, 216, 230, 0.3);
+    animation: float 5s linear forwards, pop 0.6s ease-out forwards 4.4s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+        opacity: .8;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+} */
+
+.about {
+    height: 30%;
+    width: 80%;
+}
+
+.gamecard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+}
+
+.sudokucard {
+    width: 300px;
+    height: 300px;
+    background-color: #999;
+    border: 2px solid #333;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+#restartButton {
+    background-color: aliceblue;
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#restartButton:hover {
+    background-color: #ddd;
+}
+
+.minecard {
+    width: 300px;
+    height: 300px;
+    background: #ddd;
+    border: 2px solid #333;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cell.revealed {
+    background-color: #ddd;
+    cursor: default;
+}
+
+.mine {
+    color: red;
+    font-weight: bold;
+}
+
+
+.contact img {
+    scale: 20%;
+    margin: 1rem;
 }
