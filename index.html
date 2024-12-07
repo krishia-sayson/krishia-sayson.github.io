@@ -56,14 +56,20 @@
                 </p>
                 <div class="about-nav">
                     <ul>
-                        <li class="hover">Education</li>
-                        <li>Achievements</li>
-                        <li>Projects</li>
+                        <li class="educModal"><a href="#" id="openModal" class="btn">Education</a></li>
+                        <li><a href="">Achievements</a></li>
                         <li><a href="./minigames.html">Mini games</a></li>
                         <li></li>
                     </ul>
 
                 </div>
+            </div>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <h2>EDUCATION</h2>
+                <p>Tertiary</p>
+                <p>Cebu Technologicak University</p>
             </div>
         </div>
 
@@ -79,6 +85,16 @@
         </div>
         <div class="about">
         </div>
+
+        <div class="project-container" id="Projects">
+            <div class="pcard"><img src="./img/bank/1.jpg" alt=""></div>
+            <div class="pcard"><img src="/img/tendir/3.jpg" alt=""></div>
+            <div class="pcard"><img src="/img/sleepstats/image.png" alt=""></div>
+            <div class="pcard"><img src="/img/morse/462544091_2405179089823185_288875774624895324_n.jpg" alt=""></div>
+            <div class="pcard"></div>
+            <div class="pcard"></div>
+        </div>
+
         <div class="contact" id="contact">
             <a href="https://www.facebook.com/K.T.Sayson/"><img src="./img/facebook.png" alt=""></a>
             <img src="./img/6214711_instagram_logo_icon.png" alt="">
@@ -86,6 +102,8 @@
             <img src="./img/mail_logo.png" alt="">
             <a href="https://github.com/Xaeter"><img src="./img/github_logo.png" alt=""></a>
         </div>
+
+
 
         <div>
             <div class="bot-bar" id="bottom">
@@ -96,6 +114,23 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const openModal = document.getElementById('openModal');
+
+        // Open the modal when the link is clicked
+        openModal.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default link behavior
+            modal.style.display = 'flex'; // Show the modal
+        });
+
+        // Close the modal if the user clicks outside the modal content
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
 
     <script src="script.js"></script>
 

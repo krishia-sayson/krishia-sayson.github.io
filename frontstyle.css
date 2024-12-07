@@ -231,29 +231,58 @@ body>div {
     margin: 3rem;
 }
 
+
 .about-nav {
-    .about-nav {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-    }
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
+
 .about-nav ul {
+    display: flex;
     background-color: rgba(0, 0, 0, 0.562);
     margin: 1em;
     box-sizing: border-box;
     border-radius: 10px;
     padding: 1em;
-    
+    gap: 3em;
+
 }
 
-.about-nav li{
+.about-nav li {
     display: inline-flex;
     font-size: large;
     text-transform: uppercase;
     justify-content: space-between;
     text-align: center;
     gap: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-content {
+    background-color: rgba(34, 13, 13, 0.8);
+    padding: 40px;
+    border-radius: 8px;
+    width: 90%;
+    height: 60%;
+    max-width: 600px;
+    max-height: 80%; 
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
 }
 
 .card-container:hover>.info {
@@ -271,7 +300,7 @@ body>div {
     width: 90%;
     max-width: 1536px;
     margin-inline: auto;
-    
+
     position: relative;
     height: 100px;
     margin-top: 5rem;
@@ -288,6 +317,7 @@ body>div {
         left: -200px;
     }
 }
+
 /* .certs {
     width: 90%;
     max-width: 1536px;
@@ -423,7 +453,33 @@ body>div {
     height: 30%;
     width: 80%;
 }
-  
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 5rem;
+}
+
+.pcard {
+    height: 300px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.pcard img {
+    width: 100%;
+    height: 100%;
+    max-height: calc(100% - 2rem);
+    object-fit: cover;
+}
 
 .contact img {
     scale: 20%;
