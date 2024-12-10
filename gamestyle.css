@@ -111,5 +111,5 @@ body {
 .home-btn {
     align-items: center;
     margin: 0 auto;
-    position: absolute;
+    display: block;
 }
