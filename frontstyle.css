@@ -481,6 +481,18 @@ body>div {
     object-fit: cover;
 }
 
+.contact-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50;
+}
+.contact {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    
+
+}
 .contact img {
     scale: 20%;
     margin: 1em;
