@@ -308,6 +308,9 @@ body>div {
 .modal-content>h3 {
     padding-bottom: 5px;
 }
+.modal-content>p {
+    padding-bottom: 1em;
+}
 
 .card-container:hover>.info {
     opacity: 1;
@@ -377,7 +380,9 @@ body>div {
     animation-duration: 30s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-
+    animation-play-state: running; /* Ensure animation runs by default */
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .slide img {
@@ -418,6 +423,52 @@ body>div {
 
 .item8 {
     animation-delay: calc(30s / 8 * (8 - 8) * -1);
+}
+
+.certs:hover .slide,
+.slide.active {
+    animation-play-state: paused;
+}
+
+.modalSlide {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-slide {
+    /* display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin: 5% auto;
+    border-radius: 8px; */
+    background-color: rgba(34, 13, 13, 0.8);
+    padding: 40px;
+    border-radius: 8px;
+    width: 90%;
+    height: 60%;
+    max-width: 600px;
+    max-height: 80%; 
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /* .bubble-container {

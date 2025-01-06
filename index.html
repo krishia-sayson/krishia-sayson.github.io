@@ -70,7 +70,15 @@
                 <h2>EDUCATION</h2>
                 <h3>Tertiary</h3>
                 <p>Cebu Technological University</p>
-                
+
+                <H3>Secondary</H3>
+                <p>Jagobiao National High School - Senior High</p>
+                <p>Mandaue City School for the Arts</p>
+
+                <h3>Elementary</h3>
+                <p>Mandaue City School for the Arts</p>
+                <p>Pope John Paul II achievement and learning center</p>
+
             </div>
         </div>
         <div id="modalAchieve" class="modal">
@@ -81,6 +89,9 @@
                     <br>Internet of Things [2024]
                     <br>Java Programming NCIII [2024 - ongoing]
                 </p>
+                <h3>Skills</h3>
+                <h4>Programming Languages</h4>
+                <p>HTML, CSS, JavaScript, Java, Python</p>
             </div>
         </div>
         <div class="certs">
@@ -92,6 +103,10 @@
             <div class="slide item6"><img src="./img/coursera.jpg" alt=""></div>
             <div class="slide item7"><img src="./img/IMG_1239.JPG" alt=""></div>
             <div class="slide item8"><img src="./img/IMG_1240.JPG" alt=""></div>
+        </div>
+        <div class="modalSlide">
+            <span class="close">&times;</span>
+            <img class="modal-content-slide" id="modalImage">
         </div>
         <div class="about">
         </div>
@@ -153,6 +168,34 @@
         window.addEventListener('click', (event) => {
             if (event.target === modalAchieve) {
                 modalAchieve.style.display = 'none';
+            }
+        });
+        const certs = document.querySelector('.certs');
+        const slides = document.querySelectorAll('.slide');
+        const modal = document.querySelector('.modalSlide');
+        const modalImage = document.querySelector('#modalImage');
+        const closeModal = document.querySelector('.close');
+
+        // Handle click on slide
+        slides.forEach(slide => {
+            slide.addEventListener('click', () => {
+                modal.style.display = 'block';
+                modalImage.src = slide.querySelector('img').src;
+                certs.classList.add('paused'); // Pause animation for all slides
+            });
+        });
+
+        // Handle close modal
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+            certs.classList.remove('paused'); // Resume animation for all slides
+        });
+
+        // Close modal on background click
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                certs.classList.remove('paused');
             }
         });
 
