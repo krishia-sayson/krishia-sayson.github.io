@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,22 @@
         MINIGAMES
     </title>
     <link rel="stylesheet" href="./gamestyle.css">
-    
+
 </head>
+
 </html>
+
 <body>
+    <button class="home-btn"><a href="/index.html">home</a></button>
     <div class="gamecard-container">
-        <div class="sudokucard" id="sudoku"></div>
-        <button id="restartButton">Restart Game</button>
+        <div class="sudokucard" id="sudoku">
+            <table id="sudoku-grid"></table>
+            <button id="restartButton">Restart Game</button>
+        </div>
+        <button id="restartButton1">Restart Game</button>
         <div class="minecard" id="minesweeper"></div>
     </div>
-    <button class="home-btn"><a href="/index.html">home</a></button>
+    
     <script src="mine.js"></script>
+    <script src="sudoku.js"></script>
 </body>

@@ -1,29 +1,87 @@
 body {
     background-image: url('./img/retro\ wallpaper.jpg');
     font-family: Helvetica, sans-serif;
-    color: rgb(211, 211, 211);
+    color: rgb(27, 20, 20);
     height: 200%;
     background-color: #f1f1f111;
 }
 
 .gamecard-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5em;
-    gap: 3em;
+    justify-content: space-around; /* Horizontally center the Sudoku card */
+    align-items: center;     /* Vertically center the Sudoku card */
+    height: 100%;            /* Make the container take full height */
+    width: 100%;             /* Make the container take full width */
+    padding: 20px;           /* Optional: add some padding around the container */
+}
+
+h1 {
+    margin-bottom: 20px;
 }
 
 .sudokucard {
-    width: 300px;
-    height: 300px;
-    background-color: #999;
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
     border: 2px solid #333;
     padding: 16px;
-    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.sudokucard {
+    background-color: #fff;
+    border: 2px solid #333;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    border: 1px solid #2c2b2b; /* Add a border to the entire table */
+}
+
+td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #000000; /* Set individual cell borders to 1px */
+    box-sizing: border-box; /* Ensure borders don't affect dimensions */
+}
+
+td input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: none;
+    font-size: 18px;
+    outline: none;
+}
+
+td input:focus {
+    background-color: #e6f7ff;
 }
 
 #restartButton {
+    background-color: #0078d7;
+    color: white;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+#restartButton:hover {
+    background-color: #005ea6;
+}
+
+#restartButton1 {
+    display: flex;
     background-color: aliceblue;
     margin-bottom: 10px;
     padding: 8px 16px;
@@ -109,7 +167,18 @@ body {
 }
 
 .home-btn {
+    border-radius: 10px;
+    color: #000000;
+    display: block;
+    background-color: aliceblue;
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    justify-content: center;
     align-items: center;
     margin: 0 auto;
-    display: block;
+    text-decoration: none;
+    
+
 }

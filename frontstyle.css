@@ -380,8 +380,8 @@ body>div {
     animation-duration: 30s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    animation-play-state: running; /* Ensure animation runs by default */
-    transition: transform 0.3s ease;
+    /* animation-play-state: running; Ensure animation runs by default */
+    /* transition: transform 0.3s ease; */
     cursor: pointer;
 }
 
@@ -439,26 +439,28 @@ body>div {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
 }
 
 .modal-content-slide {
-    /* display: block;
+    display: block;
     max-width: 90%;
     max-height: 90%;
     margin: 5% auto;
-    border-radius: 8px; */
+    border-radius: 8px;
     background-color: rgba(34, 13, 13, 0.8);
     padding: 40px;
     border-radius: 8px;
-    width: 90%;
+
+    /* width: 90%;
     height: 60%;
     max-width: 600px;
     max-height: 80%; 
-    text-align: center;
+    text-align: center; */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    /* display: flex;
+    justify-content: center; */
 }
 
 .close {
