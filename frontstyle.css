@@ -250,13 +250,31 @@ body>div {
 }
 
 .about-nav li {
+    color:red;
     display: inline-flex;
     font-size: large;
     text-transform: uppercase;
     justify-content: space-between;
     text-align: center;
     gap: 5px;
+    text-decoration: none;
 }
+.about-nav a {
+    color: rgb(255, 191, 191);
+    display: block;
+    text-decoration: none;
+}
+
+.about-nav a:hover {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    position: static;
+    border-radius: 1%;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    transition: .5s;
+
+}    
 
 .modal {
     display: none;
@@ -282,7 +300,13 @@ body>div {
     max-height: 80%; 
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
 
+.modal-content>h2 {
+    padding-bottom: 1em;
+}
+.modal-content>h3 {
+    padding-bottom: 5px;
 }
 
 .card-container:hover>.info {
@@ -494,6 +518,6 @@ body>div {
 
 }
 .contact img {
-    scale: 20%;
+    scale: 30%;
     margin: 1em;
 }

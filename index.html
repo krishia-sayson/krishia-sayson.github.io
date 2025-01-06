@@ -56,8 +56,8 @@
                 </p>
                 <div class="about-nav">
                     <ul>
-                        <li class="educModal"><a href="#" id="openModal" class="btn">Education</a></li>
-                        <li><a href="">Achievements</a></li>
+                        <li class="Modal"><a href="#" id="openModalEduc" class="btn">Education</a></li>
+                        <li class="Modal"><a href="#" id="openModalAchieve" class="btn">Achievements</a></li>
                         <li><a href="./minigames.html">Mini games</a></li>
                         <li></li>
                     </ul>
@@ -65,14 +65,24 @@
                 </div>
             </div>
         </div>
-        <div id="modal" class="modal">
+        <div id="modalEduc" class="modal">
             <div class="modal-content">
                 <h2>EDUCATION</h2>
-                <p>Tertiary</p>
-                <p>Cebu Technologicak University</p>
+                <h3>Tertiary</h3>
+                <p>Cebu Technological University</p>
+                
             </div>
         </div>
-
+        <div id="modalAchieve" class="modal">
+            <div class="modal-content">
+                <h2>ACHIEVEMENTS</h2>
+                <h3>Trainings</h3>
+                <p>Creative Web Design [2023 - 2024]
+                    <br>Internet of Things [2024]
+                    <br>Java Programming NCIII [2024 - ongoing]
+                </p>
+            </div>
+        </div>
         <div class="certs">
             <div class="slide item1"><img src="./img/solutions challenge.jpg" alt=""></div>
             <div class="slide item2"><img src="./img/info-session.jpg" alt=""></div>
@@ -120,20 +130,33 @@
     </div>
 
     <script>
-        const openModal = document.getElementById('openModal');
+        const openModalEduc = document.getElementById('openModalEduc');
+        const openModalAchieve = document.getElementById('openModalAchieve');
 
         // Open the modal when the link is clicked
-        openModal.addEventListener('click', (event) => {
+        openModalEduc.addEventListener('click', (event) => {
             event.preventDefault(); // Prevent the default link behavior
-            modal.style.display = 'flex'; // Show the modal
+            modalEduc.style.display = 'flex'; // Show the modal
+        });
+
+        openModalAchieve.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default link behavior
+            modalAchieve.style.display = 'flex'; // Show the modal
         });
 
         // Close the modal if the user clicks outside the modal content
         window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
+            if (event.target === modalEduc) {
+                modalEduc.style.display = 'none';
             }
         });
+        window.addEventListener('click', (event) => {
+            if (event.target === modalAchieve) {
+                modalAchieve.style.display = 'none';
+            }
+        });
+
+
     </script>
 
     <script src="script.js"></script>
